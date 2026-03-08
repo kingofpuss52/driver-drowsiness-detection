@@ -35,7 +35,7 @@ When the eyes are closed for an extended period of time, the EAR value will fall
 1. Clone the project:
 
    ```bash
-   git clone [https://github.com/username/driver-drowsiness-detection.git](https://github.com/username/driver-drowsiness-detection.git)
+   git clone https://github.com/kingofpuss52/driver-drowsiness-detection.git
    cd driver-drowsiness-detection
    ```
 
