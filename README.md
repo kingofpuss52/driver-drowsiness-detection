@@ -2,61 +2,61 @@
 
 ## Project Overview
 
-Keamanan berkendara adalah prioritas utama dalam industri transportasi. Proyek ini menghadirkan solusi berbasis **Computer Vision** untuk mendeteksi tanda-tanda kelelahan dan kantuk pada pengemudi secara real-time.
+Driving safety is a top priority in the transportation industry. This project presents a **Computer Vision**-based solution to detect signs of fatigue and drowsiness in drivers in real time.
 
-Sistem ini menggunakan algoritma **Eye Aspect Ratio (EAR)** yang dipadukan dengan **Dynamic Calibration** untuk memastikan akurasi yang tinggi bagi setiap profil mata pengemudi yang unik.
+The system uses an **Eye Aspect Ratio (EAR)** algorithm combined with Dynamic Calibration to ensure high accuracy for each driver's unique eye profile.
 
-## Fitur-fitur
+## Key Features
 
-* **Dynamic Calibration:** Sistem mempelajari kondisi mata normal pengguna selama 5 detik pertama untuk menetapkan ambang batas (*threshold*) yang dipersonalisasi.
-* **Real-time Monitoring:** Deteksi instan menggunakan MediaPipe Face Mesh (468 landmarks) yang ringan dan efisien.
+* **Dynamic Calibration:** The system studies the user's normal eye condition during the first 5 seconds to set a personalized threshold.
+* **Real-time Monitoring:** Instant detection using lightweight and efficient MediaPipe Face Mesh (468 landmarks).
 * **Multi-tier Alert:**
-  * **Visual Alert:** Bingkai merah pada layar saat kantuk terdeteksi.
-  * **Audio Alert:** Peringatan suara (Beep) untuk membangunkan pengemudi.
-* **Automated Data Logging:** Setiap insiden kantuk dicatat secara otomatis ke dalam file `log_kantuk.csv` untuk analisis keselamatan lebih lanjut.
+  * **Visual Alert:** A red frame appears on the screen when drowsiness is detected.
+  * **Audio Alert:** Audible warning (Beep) to wake up the driver.
+* **Automated Data Logging:** Every drowsiness incident is automatically recorded in the `log_kantuk.csv` file for further safety analysis.
 
-## Cara Kerja
+## How It Works
 
-Sistem ini menghitung **Eye Aspect Ratio (EAR)** berdasarkan koordinat titik mata.
+This system calculates the **Eye Aspect Ratio (EAR)** based on the coordinates of the eye point.
 
 $$EAR = \frac{||p_2 - p_6|| + ||p_3 - p_5||}{2||p_1 - p_4||}$$
 
-Ketika mata tertutup untuk jangka waktu yang lama, nilai EAR akan turun di bawah ambang batas yang telah dikalibrasi, memicu protokol alarm keselamatan.
+When the eyes are closed for an extended period of time, the EAR value will fall below the calibrated threshold, triggering the safety alarm protocol.
 
-## Tech Stack yang digunakan
+## Tech Stacks
 
 * **Core:** Python
 * **Computer Vision:** OpenCV, MediaPipe
 * **Math & Data:** NumPy, SciPy (Euclidean Distance)
 * **OS Interface:** Winsound (for Windows alerts)
 
-## Instalasi dan Cara Penggunaan
+## Installation and Usage
 
-1. Clone project:
+1. Clone the project:
 
    ```bash
    git clone [https://github.com/username/driver-drowsiness-detection.git](https://github.com/username/driver-drowsiness-detection.git)
    cd driver-drowsiness-detection
    ```
 
-2. Instal Dependency yang diperlukan
+2. Install dependencies from ```requirements.txt``` file
 
    ```bash
-   pip install opencv-python mediapipe scipy numpy
+   pip install -r requirements.txt
    ```
 
-3. Jalankan project
+3. Run the project
 
    ```bash
    python app.py
    ```
 
-## Struktur Project
+## Project Structure
 
  ```plaintext
  driver-drowsiness-detection
  |-- app.py
- |-- log_kantuk.csv
+ |-- log_drowsiness.csv
  |-- README.md
  |-- requirements.txt
  ```
