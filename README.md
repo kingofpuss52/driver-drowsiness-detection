@@ -13,7 +13,7 @@ The system uses an **Eye Aspect Ratio (EAR)** algorithm combined with Dynamic Ca
 * **Multi-tier Alert:**
   * **Visual Alert:** A red frame appears on the screen when drowsiness is detected.
   * **Audio Alert:** Audible warning (Beep) to wake up the driver.
-* **Automated Data Logging:** Every drowsiness incident is automatically recorded in the `log_kantuk.csv` file for further safety analysis.
+* **Automated Data Logging:** Every drowsiness incident is automatically recorded in the `log_drowsiness.csv` file for further safety analysis.
 
 ## How It Works
 
