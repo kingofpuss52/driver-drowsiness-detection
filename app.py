@@ -40,7 +40,7 @@ print("Program Dimulai. Siapkan posisi mata melek normal untuk kalibrasi...")
 start_time = time.time()
 
 # Siapkan file CSV untuk log
-with open('log_kantuk.csv', mode='a', newline='') as file:
+with open('log_drowsiness.csv', mode='a', newline='') as file:
     writer = csv.writer(file)
     # Tulis header jika file baru
     # writer.writerow(['Timestamp', 'EAR_Value', 'Status'])
